@@ -24,6 +24,13 @@ Authorization: Bearer <JWT token here>
 NOTE: Kong will only pass the token on. So except for the `exp` claim Kong
 will not introspect the JWT nor validate it.
 
+## Installation
+
+Install the rock when building your Kong image/instance:
+```
+luarocks install kong-plugin-jwt-fetcher
+```
+
 ## Configuration
 
 The plugin supports the following configuration options:
