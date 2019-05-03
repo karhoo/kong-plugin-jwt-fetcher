@@ -12,7 +12,7 @@ local pluginName = package:match("^kong%-plugin%-(.+)$")  -- "myPlugin"
 supported_platforms = {"linux", "macosx"}
 source = {
   url = "http://github.com/karhoo/kong-plugin-jwt-fetcher.git",
-  tag = "master"
+  tag = "0.1.0"
 }
 
 description = {
