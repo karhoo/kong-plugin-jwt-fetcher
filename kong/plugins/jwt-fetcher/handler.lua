@@ -25,7 +25,7 @@ local SCHEME_ID, HOST_ID, PORT_ID, PATH_ID, QUERY_ID = 1,2,3,4,5
 -- Modules
 local json_decode = require("cjson.safe").decode
 local resty_lock = require "resty.lock"
-local responses = require "kong.tools.responses"
+local responses = require "kong.response.exit"
 local http = require "resty.http"
 
 
