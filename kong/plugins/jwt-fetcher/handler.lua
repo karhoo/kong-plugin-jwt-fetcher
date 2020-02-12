@@ -19,13 +19,12 @@ local NOT_FOUND_TOKEN = -1  -- value MUST be illegal as a JWT string, but thruth
 local SHM_PREFIX = "[" .. plugin_name .. "]:"
 local EMPTY = require("pl.tablex").readonly({})
 local SCHEME_ID, HOST_ID, PORT_ID, PATH_ID, QUERY_ID = 1,2,3,4,5
-
+local FORBIDDEN = 403
 
 
 -- Modules
 local json_decode = require("cjson.safe").decode
 local resty_lock = require "resty.lock"
-local responses = require "kong.response.exit"
 local http = require "resty.http"
 
 
@@ -341,7 +340,7 @@ function plugin:access(conf)
     end
   end
 
-  responses.send_HTTP_FORBIDDEN("You cannot consume this service")
+  kong.response.exit(FORBIDDEN, { message = "You cannot consume this service" })
 end
 
 
