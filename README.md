@@ -182,3 +182,10 @@ pushd /kong-plugin; luacheck .; popd
 # tests
 bin/busted /kong-plugin/spec -v -o gtest
 ```
+
+## Uploading new plugin version
+Get api-key from https://luarocks.org/settings/api-keys
+(creds in 1password CloudOps vault - Luarocks)
+```
+luarocks upload kong-plugin-jwt-fetcher-0.1.3-0.rockspec --api-key=<API-KEY>
+```
